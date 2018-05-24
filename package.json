@@ -1,0 +1,39 @@
+{
+  "name": "react-slicer",
+  "version": "0.0.1",
+  "description": "React component for slicing array with pagination",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimaBur/react-slicer.git"
+  },
+  "keywords": [
+    "react",
+    "pagination",
+    "array",
+    "component"
+  ],
+  "author": "Dmitry Buravtsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DimaBur/react-slicer/issues"
+  },
+  "homepage": "https://github.com/DimaBur/react-slicer#readme",
+  "dependencies": {
+    "react": "^16.4.0",
+    "webpack": "^4.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack-cli": "^2.1.4"
+  }
+}
