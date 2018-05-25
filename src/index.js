@@ -8,7 +8,8 @@ class Slicer extends React.Component {
       items: props.items,
       currentPage: props.initialPage,
       itemsPerPage: props.itemsPerPage
-    }
+    },
+    this.numberOfPages = Math.ceil(props.items.length / props.itemsPerPage)
   }
 
   handlePageNumberClick(e) {
@@ -25,14 +26,14 @@ class Slicer extends React.Component {
     return currentItems.map((item, index) => <div key={index}>{item}</div>);
   }
 
-  renderPagination(items, itemsPerPage) {
+  renderPagination() {
     let pagination = [];
-    for (let i = 1; i <= Math.ceil(items.length / itemsPerPage); i++) {
+    for (let i = 1; i <= this.numberOfPages; i++) {
       pagination.push(i);
     }
     return pagination.map(number =>
           <li
-              className={'react-slicer__page-num'}
+              className={'react-slicer__pagination-item'}
               key={number}
               id={number}
               onClick={(e) => this.handlePageNumberClick(e)}
@@ -42,6 +43,19 @@ class Slicer extends React.Component {
       );
   }
 
+  handleClickArrow(direction) {
+    const {currentPage} = this.state;git
+    if (direction === 'prev' && currentPage > 1) {
+      this.setState({
+        currentPage: currentPage - 1
+      });
+    } else if (direction === 'next' && currentPage < this.numberOfPages) {
+      this.setState({
+        currentPage: currentPage + 1
+      });
+    }
+  }
+
   render() {
     const {items, currentPage, itemsPerPage} = this.state;
 
@@ -49,7 +63,11 @@ class Slicer extends React.Component {
         <div className={'react-slicer'}>
 
         <div className={'react-slicer__view'}>{this.renderItems(items, currentPage, itemsPerPage)}</div>
-          <ul className={'react-slicer__pagination'}>{this.renderPagination(items, itemsPerPage)}</ul>
+          <ul className={'react-slicer__pagination'}>
+            <li className={'react-slicer__pagination-item react-slicer__pagination-item_prev'} onClick={() => this.handleClickArrow('prev')}>{'<'}</li>
+            {this.renderPagination(items, itemsPerPage)}
+            <li className={'react-slicer__pagination-item react-slicer__pagination-item_next'} onClick={() => this.handleClickArrow('next')}>{'>'}</li>
+          </ul>
         </div>
     );
   }
