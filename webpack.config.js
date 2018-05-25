@@ -1,7 +1,7 @@
+const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-module.exports = (env) => ({
+module.exports = env => ({
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -24,7 +24,7 @@ module.exports = (env) => ({
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          env.production ? MiniCssExtractPlugin.loader : 'style-loader',
           "css-loader",
           "sass-loader"
         ]
@@ -37,6 +37,12 @@ module.exports = (env) => ({
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'ENV': JSON.stringify(process.env.NODE_ENV),
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      }
     })
   ],
   // externals: {
