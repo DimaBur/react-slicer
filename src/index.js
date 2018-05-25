@@ -44,7 +44,7 @@ class Slicer extends React.Component {
   }
 
   handleClickArrow(direction) {
-    const {currentPage} = this.state;git
+    const {currentPage} = this.state;
     if (direction === 'prev' && currentPage > 1) {
       this.setState({
         currentPage: currentPage - 1
@@ -58,19 +58,25 @@ class Slicer extends React.Component {
 
   render() {
     const {items, currentPage, itemsPerPage} = this.state;
+    const {prevBtn, nextBtn} = this.props;
 
     return (
         <div className={'react-slicer'}>
 
         <div className={'react-slicer__view'}>{this.renderItems(items, currentPage, itemsPerPage)}</div>
           <ul className={'react-slicer__pagination'}>
-            <li className={'react-slicer__pagination-item react-slicer__pagination-item_prev'} onClick={() => this.handleClickArrow('prev')}>{'<'}</li>
+            <li className={'react-slicer__pagination-item react-slicer__pagination-item_prev'} onClick={() => this.handleClickArrow('prev')}>{prevBtn}</li>
             {this.renderPagination(items, itemsPerPage)}
-            <li className={'react-slicer__pagination-item react-slicer__pagination-item_next'} onClick={() => this.handleClickArrow('next')}>{'>'}</li>
+            <li className={'react-slicer__pagination-item react-slicer__pagination-item_next'} onClick={() => this.handleClickArrow('next')}>{nextBtn}</li>
           </ul>
         </div>
     );
   }
 }
+
+Slicer.defaultProps = {
+  prevBtn: <span className={'react-slicer__arrow react-slicer__arrow_prev'}>{'<'}</span>,
+  nextBtn: <span className={'react-slicer__arrow react-slicer__arrow_next'}>{'>'}</span>
+};
 
 export default Slicer;

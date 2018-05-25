@@ -25,4 +25,8 @@
       border-bottom-right-radius: 5px;
     }
   }
+  &__arrow {
+    position: relative;
+    top: -1px;
+  }
 }
