@@ -1,12 +1,13 @@
 import React from 'react'
+import './scss/style.scss'
 
 class Slicer extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      items: ['a','b','c','d','e','f','g','h','i','j','k'],
-      currentPage: 1,
-      itemsPerPage: 3
+      items: props.items,
+      currentPage: props.initialPage,
+      itemsPerPage: props.itemsPerPage
     }
   }
 
@@ -31,6 +32,7 @@ class Slicer extends React.Component {
     }
     return pagination.map(number =>
           <li
+              className={'react-slicer__page-num'}
               key={number}
               id={number}
               onClick={(e) => this.handlePageNumberClick(e)}
@@ -46,8 +48,8 @@ class Slicer extends React.Component {
     return (
         <div className={'react-slicer'}>
 
-        <div className={'react-slicer__wrapper'}>{this.renderItems(items, currentPage, itemsPerPage)}</div>
-          <ul>{this.renderPagination(items, itemsPerPage)}</ul>
+        <div className={'react-slicer__view'}>{this.renderItems(items, currentPage, itemsPerPage)}</div>
+          <ul className={'react-slicer__pagination'}>{this.renderPagination(items, itemsPerPage)}</ul>
         </div>
     );
   }
