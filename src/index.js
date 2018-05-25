@@ -18,7 +18,8 @@ class Slicer extends React.Component {
     })
   }
 
-  renderItems(items, currentPage, itemsPerPage) {
+  renderItems() {
+    const {items, currentPage, itemsPerPage} = this.state;
     const lastItemIndex = currentPage * itemsPerPage,
         firstItemIndex = lastItemIndex - itemsPerPage,
         currentItems = items.slice(firstItemIndex, lastItemIndex);
@@ -57,16 +58,15 @@ class Slicer extends React.Component {
   }
 
   render() {
-    const {items, currentPage, itemsPerPage} = this.state;
     const {prevBtn, nextBtn} = this.props;
 
     return (
         <div className={'react-slicer'}>
 
-        <div className={'react-slicer__view'}>{this.renderItems(items, currentPage, itemsPerPage)}</div>
+        <div className={'react-slicer__view'}>{this.renderItems()}</div>
           <ul className={'react-slicer__pagination'}>
             <li className={'react-slicer__pagination-item react-slicer__pagination-item_prev'} onClick={() => this.handleClickArrow('prev')}>{prevBtn}</li>
-            {this.renderPagination(items, itemsPerPage)}
+            {this.renderPagination()}
             <li className={'react-slicer__pagination-item react-slicer__pagination-item_next'} onClick={() => this.handleClickArrow('next')}>{nextBtn}</li>
           </ul>
         </div>
