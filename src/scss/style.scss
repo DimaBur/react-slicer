@@ -12,9 +12,8 @@
     color: #007bff;
     border: 1px solid #dee2e6;
     margin-left: -1px;
-    &:hover {
+    &_active {
       background-color: #e9ecef;
-      transition-duration: .2s;
     }
     &:first-of-type {
       border-top-left-radius: 5px;

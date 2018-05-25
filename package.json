@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/DimaBur/react-slicer#readme",
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^16.4.0",
     "webpack": "^4.8.3"
   },

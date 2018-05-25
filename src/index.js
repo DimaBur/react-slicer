@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import './scss/style.scss'
 
 class Slicer extends React.Component {
@@ -34,7 +35,9 @@ class Slicer extends React.Component {
     }
     return pagination.map(number =>
           <li
-              className={'react-slicer__pagination-item'}
+              className={classNames('react-slicer__pagination-item', {
+                'react-slicer__pagination-item_active': number === this.state.currentPage
+              })}
               key={number}
               id={number}
               onClick={(e) => this.handlePageNumberClick(e)}
@@ -75,6 +78,7 @@ class Slicer extends React.Component {
 }
 
 Slicer.defaultProps = {
+  initialPage: 1,
   prevBtn: <span className={'react-slicer__arrow react-slicer__arrow_prev'}>{'<'}</span>,
   nextBtn: <span className={'react-slicer__arrow react-slicer__arrow_next'}>{'>'}</span>
 };
