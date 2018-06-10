@@ -37,7 +37,7 @@ class App extends Component {
 
 export default App;
 ```
-###Props
+### Props
 
 | Name | Type | Default | Description
 |:------ |:------ |:------ | :------ |
