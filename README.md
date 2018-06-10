@@ -9,7 +9,7 @@ yarn add react-slicer
 ```
 
 ```
-npm i react-slicer --save
+npm i react-slicer
 ```
 
 ### Usage
