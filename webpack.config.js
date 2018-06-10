@@ -11,7 +11,7 @@ module.exports = env => ({
     rules: [
       {
         test: /\.js$/,
-        //include: path.resolve(__dirname, 'src'),
+        include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules|bower_components|build)/,
         use: {
           loader: 'babel-loader',
@@ -35,7 +35,7 @@ module.exports = env => ({
       filename: "react-slicer.css"
     })
   ],
-  // externals: {
-  //   'react': 'commonjs react'
-  // }
+  externals: {
+    'react': 'commonjs react'
+  }
 });

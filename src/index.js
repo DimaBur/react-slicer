@@ -79,6 +79,7 @@ class Slicer extends React.Component {
 
 Slicer.defaultProps = {
   initialPage: 1,
+  itemsPerPage: 4,
   prevBtn: <span className={'react-slicer__arrow react-slicer__arrow_prev'}>{'<'}</span>,
   nextBtn: <span className={'react-slicer__arrow react-slicer__arrow_next'}>{'>'}</span>
 };

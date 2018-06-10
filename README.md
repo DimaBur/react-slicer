@@ -37,4 +37,14 @@ class App extends Component {
 
 export default App;
 ```
+###Props
+
+| Name | Type | Default | Description
+|:------ |:------ |:------ | :------ |
+| items | array | - | Input array of items.|
+| initialPage | integer | 1 | Initial page number. |
+| itemsPerPage | integer | 4 | Items amount on each page.|
+| prevBtn | string (html) | `<span className={'react-slicer__arrow react-slicer__arrow_prev'}>{'<'}</span>` | Previous arrow template in page number panel.|
+| nextBtn | string (html) | `<span className={'react-slicer__arrow react-slicer__arrow_next'}>{'>'}</span>` | Next arrow template in page number panel.|
+
 
