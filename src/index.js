@@ -6,11 +6,11 @@ class Slicer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: props.items,
+      items: props.children,
       currentPage: props.initialPage,
       itemsPerPage: props.itemsPerPage
     };
-    this.numberOfPages = Math.ceil(props.items.length / props.itemsPerPage)
+    this.numberOfPages = Math.ceil(props.children.length / props.itemsPerPage)
   }
 
   handlePageNumberClick(e) {
