@@ -1,5 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
+import PropTypes from 'prop-types';
 import './scss/style.scss'
 
 class Slicer extends React.Component {
@@ -82,6 +83,14 @@ Slicer.defaultProps = {
   itemsPerPage: 4,
   prevBtn: <span className={'react-slicer__arrow react-slicer__arrow_prev'}>{'<'}</span>,
   nextBtn: <span className={'react-slicer__arrow react-slicer__arrow_next'}>{'>'}</span>
+};
+
+Slicer.propTypes = {
+  initialPage: PropTypes.number,
+  itemsPerPage: PropTypes.number,
+  prevBtn: PropTypes.object,
+  nextBtn: PropTypes.object,
+  children: PropTypes.object
 };
 
 export default Slicer;
