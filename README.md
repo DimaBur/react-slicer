@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/react-slicer.svg)](https://badge.fury.io/js/react-slicer)
+
 # `react-slicer`
 
 React component to separate array of elements on pages with pagination.
