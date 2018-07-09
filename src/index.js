@@ -9,7 +9,7 @@ class Slicer extends React.Component {
       items: props.items,
       currentPage: props.initialPage,
       itemsPerPage: props.itemsPerPage
-    },
+    };
     this.numberOfPages = Math.ceil(props.items.length / props.itemsPerPage)
   }
 
@@ -25,7 +25,7 @@ class Slicer extends React.Component {
         firstItemIndex = lastItemIndex - itemsPerPage,
         currentItems = items.slice(firstItemIndex, lastItemIndex);
 
-    return currentItems.map((item, index) => <div key={index}>{item}</div>);
+    return currentItems.map((item) => item);
   }
 
   renderPagination() {
