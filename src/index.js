@@ -100,7 +100,7 @@ Slicer.propTypes = {
   itemsPerPage: PropTypes.number,
   prevBtn: PropTypes.object,
   nextBtn: PropTypes.object,
-  children: PropTypes.object
+  children: PropTypes.array
 }
 
 export default Slicer

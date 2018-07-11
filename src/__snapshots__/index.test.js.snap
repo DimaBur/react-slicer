@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render without crashing 1`] = `
+<div
+  className="react-slicer"
+>
+  <div
+    className="react-slicer__view"
+  >
+    <div>
+      Item 1
+    </div>
+    <div>
+      Item 2
+    </div>
+    <div>
+      Item 3
+    </div>
+    <div>
+      Item 4
+    </div>
+  </div>
+  <ul
+    className="react-slicer__pagination"
+  >
+    <li
+      className="react-slicer__pagination-item react-slicer__pagination-item_prev"
+      onClick={[Function]}
+    >
+      <span
+        className="react-slicer__arrow react-slicer__arrow_prev"
+      >
+        &lt;
+      </span>
+    </li>
+    <li
+      className="react-slicer__pagination-item react-slicer__pagination-item_active"
+      id={1}
+      onClick={[Function]}
+    >
+      1
+    </li>
+    <li
+      className="react-slicer__pagination-item"
+      id={2}
+      onClick={[Function]}
+    >
+      2
+    </li>
+    <li
+      className="react-slicer__pagination-item react-slicer__pagination-item_next"
+      onClick={[Function]}
+    >
+      <span
+        className="react-slicer__arrow react-slicer__arrow_next"
+      >
+        &gt;
+      </span>
+    </li>
+  </ul>
+</div>
+`;
