@@ -1,5 +1,6 @@
 {
-    "extends": "standard",
+    "extends": ["standard",
+      "plugin:react/recommended"],
     "env": {
         "jest": true
     }

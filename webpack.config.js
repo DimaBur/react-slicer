@@ -1,5 +1,5 @@
-const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = env => ({
   entry: './src/index.js',
   output: {
@@ -24,18 +24,18 @@ module.exports = env => ({
         test: /\.scss$/,
         use: [
           env.production ? MiniCssExtractPlugin.loader : 'style-loader',
-          "css-loader",
-          "sass-loader"
+          'css-loader',
+          'sass-loader'
         ]
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "react-slicer.css"
+      filename: 'react-slicer.css'
     })
   ],
   externals: {
     'react': 'commonjs react'
   }
-});
+})
