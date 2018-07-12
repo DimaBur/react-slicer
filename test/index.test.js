@@ -2,7 +2,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import enzyme, {shallow} from 'enzyme'
 
-import Slicer from './index'
+import Slicer from '../src/index'
 
 import Adapter from 'enzyme-adapter-react-16'
 
