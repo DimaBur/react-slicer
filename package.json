@@ -2,7 +2,10 @@
   "name": "react-slicer",
   "version": "0.1.1",
   "description": "React component for slicing array with pagination",
-  "main": "./build/index.js",
+  "main": "build/index.js",
+  "files": [
+    "build/"
+  ],
   "scripts": {
     "test": "jest",
     "start": "webpack --watch --mode development --env.development",
