@@ -14,9 +14,9 @@ class Slicer extends React.Component {
     this.numberOfPages = Math.ceil(props.children.length / props.itemsPerPage)
   }
 
-  handlePageNumberClick (e) {
+  handlePageNumberClick (number) {
     this.setState({
-      currentPage: Number(e.target.id)
+      currentPage: Number(number)
     })
   }
 
@@ -40,8 +40,8 @@ class Slicer extends React.Component {
           'react-slicer__pagination-item_active': number === this.state.currentPage
         })}
         key={number}
-        id={number}
-        onClick={e => this.handlePageNumberClick(e)}
+        id={`num-${number}`}
+        onClick={() => this.handlePageNumberClick(number)}
       >
         {number}
       </li>

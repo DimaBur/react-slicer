@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Pages changing 1`] = `"<div class=\\"react-slicer\\"><div class=\\"react-slicer__view\\"><div>Item 1</div><div>Item 2</div><div>Item 3</div></div><ul class=\\"react-slicer__pagination\\"><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_prev\\"><span class=\\"react-slicer__arrow react-slicer__arrow_prev\\">&lt;</span></li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_active\\" id=\\"num-1\\">1</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-2\\">2</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-3\\">3</li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_next\\"><span class=\\"react-slicer__arrow react-slicer__arrow_next\\">&gt;</span></li></ul></div>"`;
+
+exports[`Pages changing 2`] = `"<div class=\\"react-slicer\\"><div class=\\"react-slicer__view\\"><div>Item 1</div><div>Item 2</div><div>Item 3</div></div><ul class=\\"react-slicer__pagination\\"><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_prev\\"><span class=\\"react-slicer__arrow react-slicer__arrow_prev\\">&lt;</span></li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_active\\" id=\\"num-1\\">1</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-2\\">2</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-3\\">3</li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_next\\"><span class=\\"react-slicer__arrow react-slicer__arrow_next\\">&gt;</span></li></ul></div>"`;
+
+exports[`Pages changing 3`] = `"<div class=\\"react-slicer\\"><div class=\\"react-slicer__view\\"><div>Item 1</div><div>Item 2</div><div>Item 3</div></div><ul class=\\"react-slicer__pagination\\"><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_prev\\"><span class=\\"react-slicer__arrow react-slicer__arrow_prev\\">&lt;</span></li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_active\\" id=\\"num-1\\">1</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-2\\">2</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-3\\">3</li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_next\\"><span class=\\"react-slicer__arrow react-slicer__arrow_next\\">&gt;</span></li></ul></div>"`;
+
+exports[`Pages changing 4`] = `"<div class=\\"react-slicer\\"><div class=\\"react-slicer__view\\"><div>Item 1</div><div>Item 2</div><div>Item 3</div></div><ul class=\\"react-slicer__pagination\\"><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_prev\\"><span class=\\"react-slicer__arrow react-slicer__arrow_prev\\">&lt;</span></li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_active\\" id=\\"num-1\\">1</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-2\\">2</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-3\\">3</li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_next\\"><span class=\\"react-slicer__arrow react-slicer__arrow_next\\">&gt;</span></li></ul></div>"`;
+
 exports[`Render without crashing 1`] = `
 <div
   className="react-slicer"
@@ -15,9 +23,6 @@ exports[`Render without crashing 1`] = `
     </div>
     <div>
       Item 3
-    </div>
-    <div>
-      Item 4
     </div>
   </div>
   <ul
@@ -35,17 +40,24 @@ exports[`Render without crashing 1`] = `
     </li>
     <li
       className="react-slicer__pagination-item react-slicer__pagination-item_active"
-      id={1}
+      id="num-1"
       onClick={[Function]}
     >
       1
     </li>
     <li
       className="react-slicer__pagination-item"
-      id={2}
+      id="num-2"
       onClick={[Function]}
     >
       2
+    </li>
+    <li
+      className="react-slicer__pagination-item"
+      id="num-3"
+      onClick={[Function]}
+    >
+      3
     </li>
     <li
       className="react-slicer__pagination-item react-slicer__pagination-item_next"
