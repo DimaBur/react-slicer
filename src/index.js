@@ -14,6 +14,10 @@ class Slicer extends React.Component {
     this.numberOfPages = Math.ceil(props.children.length / props.itemsPerPage)
   }
 
+  shouldComponentUpdate (nextProps, nextState) {
+    return this.state.currentPage !== nextState.currentPage
+  }
+
   handlePageNumberClick (number) {
     this.setState({
       currentPage: Number(number)
