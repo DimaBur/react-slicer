@@ -17,8 +17,7 @@ const defaultComponent = <Slicer
   <div key={4}>Item 4</div>
   <div key={5}>Item 5</div>
   <div key={6}>Item 6</div>
-  <div key={7}>Item 7
-  </div>
+  <div key={7}>Item 7</div>
   <div key={8}>Item 8</div>
 </Slicer>
 
