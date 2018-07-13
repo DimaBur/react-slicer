@@ -76,5 +76,6 @@ this.slicer.nextPage()
 |:------ |:------ |:------ |
 | prevPage() | - | Switch to the previous page |
 | nextPage() | - | Switch to the next page |
+| setPage(index) | `number` (type: number) - page index | Switch to the wanted page index. The `index` argument should be between `1` and number of pages. |
 
 

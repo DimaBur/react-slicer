@@ -20,10 +20,14 @@ class Slicer extends React.Component {
     return this.state.currentPage !== nextState.currentPage
   }
 
-  handlePageNumberClick (number) {
-    this.setState({
-      currentPage: Number(number)
-    })
+  setPage (index) {
+    if (Number.isInteger(index) && index > 0 && index <= this.numberOfPages) {
+      this.setState({
+        currentPage: Number(index)
+      })
+    } else {
+      console.error(new Error('The index must be an integer greater than 0 and less than or equal to the number of pages.'))
+    }
   }
 
   renderItems () {
@@ -47,7 +51,7 @@ class Slicer extends React.Component {
         })}
         key={number}
         id={`num-${number}`}
-        onClick={() => this.handlePageNumberClick(number)}
+        onClick={() => this.setPage(number)}
       >
         {number}
       </li>
