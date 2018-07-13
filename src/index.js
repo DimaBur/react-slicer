@@ -56,7 +56,7 @@ class Slicer extends React.Component {
 
   prevPage () {
     const { currentPage } = this.state
-    if(currentPage > 1) {
+    if (currentPage > 1) {
       this.setState({
         currentPage: currentPage - 1
       })
