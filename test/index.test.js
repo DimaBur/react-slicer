@@ -30,11 +30,11 @@ test('Render without crashing', () => {
 test('Pages changing', () => {
   const component = shallow(defaultComponent)
   expect(component.html()).toMatchSnapshot()
-  component.instance().handleClickArrow('next')
+  component.instance().nextPage()
   expect(component.html()).toMatchSnapshot()
-  component.instance().handleClickArrow('next')
+  component.instance().nextPage()
   expect(component.html()).toMatchSnapshot()
-  component.instance().handleClickArrow('prev')
+  component.instance().prevPage()
   expect(component.html()).toMatchSnapshot()
 })
 
