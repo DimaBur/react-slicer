@@ -1,0 +1,141 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.10
+3 info using node@v6.14.3
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/dmitry/Documents/my_projects/react-slicer',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/dmitry/.npm/react-slicer/0.2.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/dmitry/.npm correctMkdir not in flight; initializing
+10 info lifecycle react-slicer@0.2.0~prepublish: react-slicer@0.2.0
+11 verbose lifecycle react-slicer@0.2.0~prepublish: unsafe-perm in lifecycle true
+12 verbose lifecycle react-slicer@0.2.0~prepublish: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/dmitry/Documents/my_projects/react-slicer/node_modules/.bin:/Users/dmitry/.rbenv/bin:/Users/dmitry/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+13 verbose lifecycle react-slicer@0.2.0~prepublish: CWD: /Users/dmitry/Documents/my_projects/react-slicer
+14 silly lifecycle react-slicer@0.2.0~prepublish: Args: [ '-c', 'yarn run lint && yarn run test && yarn run build' ]
+15 silly lifecycle react-slicer@0.2.0~prepublish: Returned: code: 0  signal: null
+16 verbose tar pack [ '/Users/dmitry/.npm/react-slicer/0.2.0/package.tgz',
+16 verbose tar pack   '/Users/dmitry/Documents/my_projects/react-slicer' ]
+17 verbose tarball /Users/dmitry/.npm/react-slicer/0.2.0/package.tgz
+18 verbose folder /Users/dmitry/Documents/my_projects/react-slicer
+19 verbose addLocalTarball adding from inside cache /Users/dmitry/.npm/react-slicer/0.2.0/package.tgz
+20 verbose correctMkdir /Users/dmitry/.npm correctMkdir not in flight; initializing
+21 silly cache afterAdd react-slicer@0.2.0
+22 verbose afterAdd /Users/dmitry/.npm/react-slicer/0.2.0/package/package.json not in flight; writing
+23 verbose correctMkdir /Users/dmitry/.npm correctMkdir not in flight; initializing
+24 verbose afterAdd /Users/dmitry/.npm/react-slicer/0.2.0/package/package.json written
+25 silly publish { name: 'react-slicer',
+25 silly publish   version: '0.2.0',
+25 silly publish   description: 'React component for slicing array with pagination',
+25 silly publish   main: 'build/index.js',
+25 silly publish   scripts:
+25 silly publish    { start: 'webpack --watch --mode development --env.development',
+25 silly publish      build: 'webpack --env.production',
+25 silly publish      test: 'jest',
+25 silly publish      lint: 'eslint src/',
+25 silly publish      prepublish: 'yarn run lint && yarn run test && yarn run build' },
+25 silly publish   jest: { transform: { '.*': 'jest-css-modules' } },
+25 silly publish   repository:
+25 silly publish    { type: 'git',
+25 silly publish      url: 'git+https://github.com/DimaBur/react-slicer.git' },
+25 silly publish   keywords: [ 'react', 'pagination', 'array', 'component' ],
+25 silly publish   author: { name: 'Dmitry Buravtsov' },
+25 silly publish   license: 'ISC',
+25 silly publish   bugs: { url: 'https://github.com/DimaBur/react-slicer/issues' },
+25 silly publish   homepage: 'https://github.com/DimaBur/react-slicer#readme',
+25 silly publish   peerDependencies: { react: '^16.4.0' },
+25 silly publish   dependencies: { classnames: '^2.2.5', 'prop-types': '^15.6.2' },
+25 silly publish   devDependencies:
+25 silly publish    { 'babel-cli': '^6.26.0',
+25 silly publish      'babel-loader': '^7.1.4',
+25 silly publish      'babel-plugin-transform-react-jsx': '^6.24.1',
+25 silly publish      'babel-preset-env': '^1.7.0',
+25 silly publish      'babel-preset-react': '^6.24.1',
+25 silly publish      'css-loader': '^0.28.11',
+25 silly publish      enzyme: '^3.3.0',
+25 silly publish      'enzyme-adapter-react-16': '^1.1.1',
+25 silly publish      eslint: '^5.1.0',
+25 silly publish      'eslint-config-standard': '^11.0.0',
+25 silly publish      'eslint-plugin-import': '^2.13.0',
+25 silly publish      'eslint-plugin-node': '^6.0.1',
+25 silly publish      'eslint-plugin-promise': '^3.8.0',
+25 silly publish      'eslint-plugin-react': '^7.10.0',
+25 silly publish      'eslint-plugin-standard': '^3.1.0',
+25 silly publish      jest: '^23.4.0',
+25 silly publish      'jest-css-modules': '^1.1.0',
+25 silly publish      'mini-css-extract-plugin': '^0.4.0',
+25 silly publish      'node-sass': '^4.9.0',
+25 silly publish      'react-dom': '^16.4.1',
+25 silly publish      'react-test-renderer': '^16.4.1',
+25 silly publish      'sass-loader': '^7.0.1',
+25 silly publish      'style-loader': '^0.21.0',
+25 silly publish      webpack: '^4.8.3',
+25 silly publish      'webpack-cli': '^2.1.4' },
+25 silly publish   readme: '[![npm version](https://badge.fury.io/js/react-slicer.svg)](https://badge.fury.io/js/react-slicer)\n\n# `react-slicer`\n\nReact component to separate array of elements on pages with pagination.\n\n### Installation\n\n```\nyarn add react-slicer\n```\n\n```\nnpm i react-slicer\n```\n\n### Usage\n\n```js\nimport React, { Component } from \'react\';\nimport Slicer from \'react-slicer\'\nimport \'react-slicer/build/react-slicer.css\'\n\nclass App extends Component {\n  render() {\n    \n    return (\n        <Slicer\n            initialPage={1}\n            itemsPerPage={4}\n        >\n            <div key={1}>Item 1</div>\n            <div key={2}>Item 2</div>\n            <div key={3}>Item 3</div>\n            <div key={4}>Item 4</div>\n            <div key={5}>Item 5</div>\n            <div key={6}>Item 6</div>\n            <div key={7}>Item 7</div>\n            <div key={8}>Item 8</div>\n        </Slicer>\n    );\n  }\n}\n\nexport default App;\n```\n### Props\n\n| Name | Type | Default | Description\n|:------ |:------ |:------ | :------ |\n| initialPage | integer | 1 | Initial page number. |\n| itemsPerPage | integer | 4 | Items amount on each page.|\n| prevBtn | string (html) | `<span className={\'react-slicer__arrow react-slicer__arrow_prev\'}>{\'<\'}</span>` | Previous arrow template in page number panel.|\n| nextBtn | string (html) | `<span className={\'react-slicer__arrow react-slicer__arrow_next\'}>{\'>\'}</span>` | Next arrow template in page number panel.|\n\n### Methods\n\nMethods can be called on the component. You should use `ref` attribute to call them:\n\n```js\n<Slicer ref={(component) => {this.slicer = component}}>\n    <div key={1}>Item 1</div>\n    <div key={2}>Item 2</div>\n    <div key={3}>Item 3</div>\n    <div key={4}>Item 4</div>\n    <div key={5}>Item 5</div>\n    <div key={6}>Item 6</div>\n    <div key={7}>Item 7</div>\n    <div key={8}>Item 8</div>\n</Slicer>\n\nthis.slicer.nextPage()\n```\n\n| Function | Arguments | Description \n|:------ |:------ |:------ |\n| prevPage() | - | Switch to the previous page |\n| nextPage() | - | Switch to the next page |\n| setPage(index) | `number` (type: number) - page index | Switch to the wanted page index. The `index` argument should be between `1` and number of pages. |\n\n\n',
+25 silly publish   readmeFilename: 'README.md',
+25 silly publish   gitHead: '3adb3dfb5048dfd95a4b43b3369877b3a3a6e079',
+25 silly publish   _id: 'react-slicer@0.2.0',
+25 silly publish   _shasum: '75ae473bc37ba387584d16ce2cd546682ee1e5f1',
+25 silly publish   _from: '.' }
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name react-slicer
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'react-slicer',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'react-slicer',
+30 silly mapToRegistry   name: 'react-slicer',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/react-slicer
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading /Users/dmitry/.npm/react-slicer/0.2.0/package.tgz
+34 verbose request uri https://registry.npmjs.org/react-slicer
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 5:55:17 PM
+37 verbose request using bearer token for auth
+38 verbose request id bfd888d80a9d6b2b
+39 http request PUT https://registry.npmjs.org/react-slicer
+40 http 400 https://registry.npmjs.org/react-slicer
+41 verbose headers { date: 'Sat, 14 Jul 2018 14:55:19 GMT',
+41 verbose headers   'content-type': 'application/json',
+41 verbose headers   'content-length': '87',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'set-cookie': [ '__cfduid=d740d32e03ea9f30ef61ccc47b48f1ab21531580117; expires=Sun, 14-Jul-19 14:55:17 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+41 verbose headers   'cf-ray': '43a4d4558be18d59-DME',
+41 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+41 verbose headers   server: 'cloudflare' }
+42 verbose request invalidating /Users/dmitry/.npm/registry.npmjs.org/react-slicer on PUT
+43 error publish Failed PUT 400
+44 verbose stack Error: Cannot publish over previously published version "0.2.0". : react-slicer
+44 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+44 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+44 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:191:7)
+44 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:188:7)
+44 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+45 verbose statusCode 400
+46 verbose pkgid react-slicer
+47 verbose cwd /Users/dmitry/Documents/my_projects/react-slicer
+48 error Darwin 17.3.0
+49 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+50 error node v6.14.3
+51 error npm  v3.10.10
+52 error code E400
+53 error Cannot publish over previously published version "0.2.0". : react-slicer
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
