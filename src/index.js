@@ -12,16 +12,22 @@ class Slicer extends React.Component {
       itemsPerPage: props.itemsPerPage
     }
     this.numberOfPages = Math.ceil(props.children.length / props.itemsPerPage)
+    this.prevPage = this.prevPage.bind(this)
+    this.nextPage = this.nextPage.bind(this)
   }
 
   shouldComponentUpdate (nextProps, nextState) {
     return this.state.currentPage !== nextState.currentPage
   }
 
-  handlePageNumberClick (number) {
-    this.setState({
-      currentPage: Number(number)
-    })
+  setPage (index) {
+    if (Number.isInteger(index) && index > 0 && index <= this.numberOfPages) {
+      this.setState({
+        currentPage: Number(index)
+      })
+    } else {
+      console.error(new Error('The index must be an integer greater than 0 and less than or equal to the number of pages.'))
+    }
   }
 
   renderItems () {
@@ -45,20 +51,25 @@ class Slicer extends React.Component {
         })}
         key={number}
         id={`num-${number}`}
-        onClick={() => this.handlePageNumberClick(number)}
+        onClick={() => this.setPage(number)}
       >
         {number}
       </li>
     ))
   }
 
-  handleClickArrow (direction) {
+  prevPage () {
     const { currentPage } = this.state
-    if (direction === 'prev' && currentPage > 1) {
+    if (currentPage > 1) {
       this.setState({
         currentPage: currentPage - 1
       })
-    } else if (direction === 'next' && currentPage < this.numberOfPages) {
+    }
+  }
+
+  nextPage () {
+    const { currentPage } = this.state
+    if (currentPage < this.numberOfPages) {
       this.setState({
         currentPage: currentPage + 1
       })
@@ -75,11 +86,11 @@ class Slicer extends React.Component {
           {this.renderItems()}
         </div>
         <ul className="react-slicer__pagination">
-          <li className="react-slicer__pagination-item react-slicer__pagination-item_prev" onClick={() => this.handleClickArrow('prev')}>
+          <li className="react-slicer__pagination-item react-slicer__pagination-item_prev" onClick={this.prevPage}>
             {prevBtn}
           </li>
           {this.renderPagination()}
-          <li className="react-slicer__pagination-item react-slicer__pagination-item_next" onClick={() => this.handleClickArrow('next')}>
+          <li className="react-slicer__pagination-item react-slicer__pagination-item_next" onClick={this.nextPage}>
             {nextBtn}
           </li>
         </ul>
