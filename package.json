@@ -1,6 +1,6 @@
 {
   "name": "react-slicer",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "React component for slicing array with pagination",
   "main": "build/index.js",
   "scripts": {
@@ -31,11 +31,12 @@
     "url": "https://github.com/DimaBur/react-slicer/issues"
   },
   "homepage": "https://github.com/DimaBur/react-slicer#readme",
+  "peerDependencies": {
+    "react": "^16.4.0"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
-    "eslint": "^5.1.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.0"
+    "prop-types": "^15.6.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -46,7 +47,7 @@
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.19.1",
+    "eslint": "^5.1.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
