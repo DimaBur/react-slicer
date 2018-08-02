@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import './scss/style.scss'
+import Pagination from './components/Pagination'
 
 class Slicer extends React.Component {
   constructor (props) {
@@ -14,6 +15,7 @@ class Slicer extends React.Component {
     this.numberOfPages = Math.ceil(props.children.length / props.itemsPerPage)
     this.prevPage = this.prevPage.bind(this)
     this.nextPage = this.nextPage.bind(this)
+    this.setPage = this.setPage.bind(this)
   }
 
   shouldComponentUpdate (nextProps, nextState) {
@@ -39,25 +41,6 @@ class Slicer extends React.Component {
     return currentItems.map(item => item)
   }
 
-  renderPagination () {
-    const pagination = []
-    for (let i = 1; i <= this.numberOfPages; i++) {
-      pagination.push(i)
-    }
-    return pagination.map(number => (
-      <li
-        className={classNames('react-slicer__pagination-item', {
-          'react-slicer__pagination-item_active': number === this.state.currentPage
-        })}
-        key={number}
-        id={`num-${number}`}
-        onClick={() => this.setPage(number)}
-      >
-        {number}
-      </li>
-    ))
-  }
-
   prevPage () {
     const { currentPage } = this.state
     if (currentPage > 1) {
@@ -78,6 +61,7 @@ class Slicer extends React.Component {
 
   render () {
     const { prevBtn, nextBtn } = this.props
+    const {currentPage} = this.state
 
     return (
       <div className="react-slicer">
@@ -85,15 +69,15 @@ class Slicer extends React.Component {
         <div className="react-slicer__view">
           {this.renderItems()}
         </div>
-        <ul className="react-slicer__pagination">
-          <li className="react-slicer__pagination-item react-slicer__pagination-item_prev" onClick={this.prevPage}>
-            {prevBtn}
-          </li>
-          {this.renderPagination()}
-          <li className="react-slicer__pagination-item react-slicer__pagination-item_next" onClick={this.nextPage}>
-            {nextBtn}
-          </li>
-        </ul>
+        <Pagination
+          numberOfPages={this.numberOfPages}
+          currentPage={currentPage}
+          setPage={this.setPage}
+          prevPage={this.prevPage}
+          nextPage={this.nextPage}
+          prevBtn={prevBtn}
+          nextBtn={nextBtn}
+        />
       </div>
     )
   }
