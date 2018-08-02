@@ -1,11 +1,14 @@
 {
   "name": "react-slicer",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "React component for slicing array with pagination",
   "main": "build/index.js",
+  "files": [
+    "build/"
+  ],
   "scripts": {
     "start": "webpack --watch --mode development --env.development",
-    "build": "webpack --env.production",
+    "build": "webpack --mode production --env.production",
     "test": "jest",
     "lint": "eslint src/",
     "prepublish": "yarn run lint && yarn run test && yarn run build"
@@ -31,12 +34,10 @@
     "url": "https://github.com/DimaBur/react-slicer/issues"
   },
   "homepage": "https://github.com/DimaBur/react-slicer#readme",
-  "peerDependencies": {
-    "react": "^16.4.0"
-  },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
