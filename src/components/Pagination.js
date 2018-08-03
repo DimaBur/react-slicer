@@ -3,7 +3,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 
 const Pagination = (props) => {
-	const {numberOfPages, currentPage, setPage, prevPage, nextPage, prevBtn, nextBtn} = props;
+	const {numberOfPages, currentPage, setPage, prevPage, nextPage, prevBtn, nextBtn, customClass} = props;
 
 	function renderPagination () {
 		const pagination = [];
@@ -12,8 +12,8 @@ const Pagination = (props) => {
 		}
 		return pagination.map(number => (
 			<li
-				className={classNames("react-slicer__pagination-item", {
-					"react-slicer__pagination-item_active": number === currentPage
+				className={classNames(`${customClass}__pagination-item`, {
+					[`${customClass}__pagination-item_active`]: number === currentPage
 				})}
 				key={number}
 				id={`num-${number}`}
@@ -25,12 +25,12 @@ const Pagination = (props) => {
 	}
 
 	return (
-		<ul className="react-slicer__pagination">
-			<li className="react-slicer__pagination-item react-slicer__pagination-item_prev" onClick={prevPage}>
+		<ul className={`${customClass}__pagination`}>
+			<li className={`${customClass}__pagination-item ${customClass}__pagination-item_prev`} onClick={prevPage}>
 				{prevBtn}
 			</li>
 			{renderPagination()}
-			<li className="react-slicer__pagination-item react-slicer__pagination-item_next" onClick={nextPage}>
+			<li className={`${customClass}__pagination-item ${customClass}__pagination-item_next`} onClick={nextPage}>
 				{nextBtn}
 			</li>
 		</ul>
@@ -44,7 +44,8 @@ Pagination.propTypes = {
 	prevPage: PropTypes.func,
 	nextPage: PropTypes.func,
 	prevBtn: PropTypes.object,
-	nextBtn: PropTypes.object
+	nextBtn: PropTypes.object,
+	customClass: PropTypes.string
 };
 
 export default Pagination;

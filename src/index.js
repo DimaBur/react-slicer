@@ -57,13 +57,13 @@ class Slicer extends React.Component {
 	}
 
 	render () {
-		const { prevBtn, nextBtn } = this.props;
+		const { prevBtn, nextBtn, customClass } = this.props;
 		const {currentPage} = this.state;
 
 		return (
-			<div className="react-slicer">
+			<div className={customClass}>
 
-				<div className="react-slicer__view">
+				<div className={`${customClass}__view`}>
 					{this.renderItems()}
 				</div>
 
@@ -76,6 +76,7 @@ class Slicer extends React.Component {
 					nextPage={this.nextPage}
 					prevBtn={prevBtn}
 					nextBtn={nextBtn}
+					customClass={customClass}
 				/>
 			</div>
 		);
@@ -85,6 +86,7 @@ class Slicer extends React.Component {
 Slicer.defaultProps = {
 	initialPage: 1,
 	itemsPerPage: 4,
+	customClass: "react-slicer",
 	prevBtn: <span className="react-slicer__arrow react-slicer__arrow_prev">
 		{"<"}
 	</span>,
@@ -98,7 +100,8 @@ Slicer.propTypes = {
 	itemsPerPage: PropTypes.number,
 	prevBtn: PropTypes.object,
 	nextBtn: PropTypes.object,
-	children: PropTypes.array
+	children: PropTypes.array,
+	customClass: PropTypes.string
 };
 
 export default Slicer;

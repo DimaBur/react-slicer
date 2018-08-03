@@ -8,6 +8,71 @@ exports[`Pages changing 3`] = `"<div class=\\"react-slicer\\"><div class=\\"reac
 
 exports[`Pages changing 4`] = `"<div class=\\"react-slicer\\"><div class=\\"react-slicer__view\\"><div>Item 1</div><div>Item 2</div><div>Item 3</div></div><ul class=\\"react-slicer__pagination\\"><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_prev\\"><span class=\\"react-slicer__arrow react-slicer__arrow_prev\\">&lt;</span></li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_active\\" id=\\"num-1\\">1</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-2\\">2</li><li class=\\"react-slicer__pagination-item\\" id=\\"num-3\\">3</li><li class=\\"react-slicer__pagination-item react-slicer__pagination-item_next\\"><span class=\\"react-slicer__arrow react-slicer__arrow_next\\">&gt;</span></li></ul></div>"`;
 
+exports[`Render with custom class 1`] = `
+<div
+  className="custom-class"
+>
+  <div
+    className="custom-class__view"
+  >
+    <div>
+      Item 1
+    </div>
+    <div>
+      Item 2
+    </div>
+    <div>
+      Item 3
+    </div>
+  </div>
+  <ul
+    className="custom-class__pagination"
+  >
+    <li
+      className="custom-class__pagination-item custom-class__pagination-item_prev"
+      onClick={[Function]}
+    >
+      <span
+        className="react-slicer__arrow react-slicer__arrow_prev"
+      >
+        &lt;
+      </span>
+    </li>
+    <li
+      className="custom-class__pagination-item custom-class__pagination-item_active"
+      id="num-1"
+      onClick={[Function]}
+    >
+      1
+    </li>
+    <li
+      className="custom-class__pagination-item"
+      id="num-2"
+      onClick={[Function]}
+    >
+      2
+    </li>
+    <li
+      className="custom-class__pagination-item"
+      id="num-3"
+      onClick={[Function]}
+    >
+      3
+    </li>
+    <li
+      className="custom-class__pagination-item custom-class__pagination-item_next"
+      onClick={[Function]}
+    >
+      <span
+        className="react-slicer__arrow react-slicer__arrow_next"
+      >
+        &gt;
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Render without crashing 1`] = `
 <div
   className="react-slicer"
