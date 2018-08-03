@@ -96,12 +96,12 @@ Slicer.defaultProps = {
 };
 
 Slicer.propTypes = {
+	children: PropTypes.array,
+	customClass: PropTypes.string,
 	initialPage: PropTypes.number,
 	itemsPerPage: PropTypes.number,
-	prevBtn: PropTypes.object,
 	nextBtn: PropTypes.object,
-	children: PropTypes.array,
-	customClass: PropTypes.string
+	prevBtn: PropTypes.object,
 };
 
 export default Slicer;

@@ -38,14 +38,14 @@ const Pagination = (props) => {
 };
 
 Pagination.propTypes = {
-	numberOfPages:  PropTypes.number,
 	currentPage: PropTypes.number,
-	setPage: PropTypes.func,
-	prevPage: PropTypes.func,
-	nextPage: PropTypes.func,
-	prevBtn: PropTypes.object,
+	customClass: PropTypes.string,
 	nextBtn: PropTypes.object,
-	customClass: PropTypes.string
+	nextPage: PropTypes.func,
+	numberOfPages: PropTypes.number,
+	prevBtn: PropTypes.object,
+	prevPage: PropTypes.func,
+	setPage: PropTypes.func
 };
 
 export default Pagination;
