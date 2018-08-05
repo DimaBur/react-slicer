@@ -48,10 +48,11 @@ export default App;
 
 | Name | Type | Default | Description
 |:------ |:------ |:------ | :------ |
+| customClass | string | "react-slicer" | Custom class for component elements. Previous and next buttons classes don't depend on this prop. You should change their classes in `prevBtn` and `nextBtn` props.|
 | initialPage | integer | 1 | Initial page number. |
 | itemsPerPage | integer | 4 | Items amount on each page.|
-| prevBtn | string (html) | `<span className={'react-slicer__arrow react-slicer__arrow_prev'}>{'<'}</span>` | Previous arrow template in page number panel.|
 | nextBtn | string (html) | `<span className={'react-slicer__arrow react-slicer__arrow_next'}>{'>'}</span>` | Next arrow template in page number panel.|
+| prevBtn | string (html) | `<span className={'react-slicer__arrow react-slicer__arrow_prev'}>{'<'}</span>` | Previous arrow template in page number panel.|
 
 ### Methods
 
