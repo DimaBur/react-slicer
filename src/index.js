@@ -7,18 +7,11 @@ class Slicer extends React.Component {
 	constructor (props) {
 		super(props);
 		this.state = {
-			items: props.children,
-			currentPage: props.initialPage,
-			itemsPerPage: props.itemsPerPage
+			currentPage: this.props.initialPage
 		};
-		this.numberOfPages = Math.ceil(props.children.length / props.itemsPerPage);
 		this.prevPage = this.prevPage.bind(this);
 		this.nextPage = this.nextPage.bind(this);
 		this.setPage = this.setPage.bind(this);
-	}
-
-	shouldComponentUpdate (nextProps, nextState) {
-		return this.state.currentPage !== nextState.currentPage;
 	}
 
 	setPage (index) {
@@ -30,11 +23,12 @@ class Slicer extends React.Component {
 	}
 
 	renderItems () {
-		const { items, currentPage, itemsPerPage } = this.state;
+		const { children, itemsPerPage } = this.props;
+		const {currentPage} = this.state;
+		this.numberOfPages = Math.ceil(children.length / itemsPerPage);
 		const lastItemIndex = currentPage * itemsPerPage;
 		const firstItemIndex = currentPage * itemsPerPage - itemsPerPage;
-		const currentItems = items.slice(firstItemIndex, lastItemIndex);
-
+		const currentItems = children.slice(firstItemIndex, lastItemIndex);
 		return currentItems.map(item => item);
 	}
 
