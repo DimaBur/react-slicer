@@ -1,2 +1,3 @@
 build/index.js
 test/__snapshots__
+webpack.config.js

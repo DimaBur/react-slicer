@@ -4,7 +4,7 @@ import "./scss/style.scss";
 import Pagination from "./components/Pagination";
 
 class Slicer extends React.Component {
-	constructor (props) {
+	constructor(props) {
 		super(props);
 		this.state = {
 			currentPage: this.props.initialPage
@@ -14,7 +14,7 @@ class Slicer extends React.Component {
 		this.setPage = this.setPage.bind(this);
 	}
 
-	setPage (index) {
+	setPage(index) {
 		if (Number.isInteger(index) && index > 0 && index <= this.numberOfPages) {
 			this.setState({
 				currentPage: Number(index)
@@ -22,18 +22,18 @@ class Slicer extends React.Component {
 		}
 	}
 
-	renderItems () {
-		const { children, itemsPerPage } = this.props;
-		const {currentPage} = this.state;
+	renderItems() {
+		const {children, itemsPerPage} = this.props,
+			{currentPage} = this.state;
 		this.numberOfPages = Math.ceil(children.length / itemsPerPage);
-		const lastItemIndex = currentPage * itemsPerPage;
-		const firstItemIndex = currentPage * itemsPerPage - itemsPerPage;
-		const currentItems = children.slice(firstItemIndex, lastItemIndex);
+		const lastItemIndex = currentPage * itemsPerPage,
+			firstItemIndex = currentPage * itemsPerPage - itemsPerPage,
+			currentItems = children.slice(firstItemIndex, lastItemIndex);
 		return currentItems.map(item => item);
 	}
 
-	prevPage () {
-		const { currentPage } = this.state;
+	prevPage() {
+		const {currentPage} = this.state;
 		if (currentPage > 1) {
 			this.setState({
 				currentPage: currentPage - 1
@@ -41,8 +41,8 @@ class Slicer extends React.Component {
 		}
 	}
 
-	nextPage () {
-		const { currentPage } = this.state;
+	nextPage() {
+		const {currentPage} = this.state;
 		if (currentPage < this.numberOfPages) {
 			this.setState({
 				currentPage: currentPage + 1
@@ -50,9 +50,9 @@ class Slicer extends React.Component {
 		}
 	}
 
-	render () {
-		const { prevBtn, nextBtn, customClass } = this.props;
-		const {currentPage} = this.state;
+	render() {
+		const {prevBtn, nextBtn, customClass} = this.props,
+			{currentPage} = this.state;
 
 		return (
 			<div className={customClass}>
