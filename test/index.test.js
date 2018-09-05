@@ -75,19 +75,19 @@ test("Setting page", () => {
 test("Items per page amount", () => {
 	const component = shallow(defaultComponent);
 
-	component.setState({
+	component.setProps({
 		itemsPerPage: 1
 	});
 
 	expect(component.instance().renderItems()).toHaveLength(1);
 
-	component.setState({
+	component.setProps({
 		itemsPerPage: 4
 	});
 
 	expect(component.instance().renderItems()).toHaveLength(4);
 
-	component.setState({
+	component.setProps({
 		itemsPerPage: 10
 	});
 
