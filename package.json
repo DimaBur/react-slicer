@@ -4,7 +4,8 @@
   "description": "React component for slicing array with pagination",
   "main": "build/index.js",
   "files": [
-    "build/"
+    "build/",
+    "docs/"
   ],
   "scripts": {
     "start": "webpack --watch --mode development --env.development",
