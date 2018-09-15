@@ -49,7 +49,6 @@ test("Render with custom class", () => {
 
 test("Pages changing", () => {
 	const component = shallow(defaultComponent);
-	expect(component.html()).toMatchSnapshot();
 	component.instance().nextPage();
 	expect(component.html()).toMatchSnapshot();
 	component.instance().nextPage();
@@ -65,7 +64,6 @@ test("Setting page", () => {
 	component.instance().setPage(0);
 	component.instance().setPage(3);
 	expect(component.html()).toMatchSnapshot();
-	component.instance().setPage(11);
 });
 
 test("Items per page amount", () => {
