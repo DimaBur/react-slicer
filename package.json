@@ -1,14 +1,13 @@
 {
   "name": "react-slicer",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "React component for slicing array with pagination",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack --watch --mode development --env.development",
     "build": "webpack --mode production --env.production",
     "test": "jest",
-    "lint": "eslint src/",
-    "prepublish": "yarn run lint && yarn run test && yarn run build"
+    "lint": "eslint src/"
   },
   "jest": {
     "transform": {
@@ -45,6 +44,7 @@
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.2.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.13.0",

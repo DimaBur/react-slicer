@@ -1,6 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import enzyme, {shallow} from "enzyme";
+import toJson from 'enzyme-to-json';
 
 import Slicer from "../src/index";
 
@@ -45,31 +46,6 @@ test("Render with custom class", () => {
 	const component = renderer.create(componentWithCustomClass);
 	let tree = component.toJSON();
 	expect(tree).toMatchSnapshot();
-});
-
-test("Pages changing", () => {
-	const component = shallow(defaultComponent);
-	const fn = () => { throw new Error("The index must be an integer greater than 0 and less than or equal to the number of pages."); };
-	expect(component.html()).toMatchSnapshot();
-	component.instance().nextPage();
-	expect(component.html()).toMatchSnapshot();
-	component.instance().nextPage();
-	expect(component.html()).toMatchSnapshot();
-	component.instance().prevPage();
-	expect(component.html()).toMatchSnapshot();
-});
-
-test("Setting page", () => {
-	const component = shallow(defaultComponent);
-	const fn = () => { throw new Error("The index must be an integer greater than 0 and less than or equal to the number of pages."); };
-	component.instance().setPage(2);
-	expect(component.html()).toMatchSnapshot();
-	component.instance().setPage(0);
-	expect(fn).toThrow("The index must be an integer greater than 0 and less than or equal to the number of pages.");
-	component.instance().setPage(3);
-	expect(component.html()).toMatchSnapshot();
-	component.instance().setPage(11);
-	expect(fn).toThrow("The index must be an integer greater than 0 and less than or equal to the number of pages.");
 });
 
 test("Items per page amount", () => {
