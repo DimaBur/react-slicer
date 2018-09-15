@@ -2,9 +2,7 @@
 
 # `react-slicer`
 
-React component to separate array of elements on pages with pagination.
-
-####[demo](https://dimabur.github.io/react-slicer/demo/)
+React component to separate array of elements on pages with pagination ([demo](https://dimabur.github.io/react-slicer/demo/)).
 
 ### Installation
 
