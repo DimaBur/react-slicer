@@ -49,7 +49,6 @@ test("Render with custom class", () => {
 
 test("Pages changing", () => {
 	const component = shallow(defaultComponent);
-	const fn = () => { throw new Error("The index must be an integer greater than 0 and less than or equal to the number of pages."); };
 	expect(component.html()).toMatchSnapshot();
 	component.instance().nextPage();
 	expect(component.html()).toMatchSnapshot();
@@ -61,15 +60,12 @@ test("Pages changing", () => {
 
 test("Setting page", () => {
 	const component = shallow(defaultComponent);
-	const fn = () => { throw new Error("The index must be an integer greater than 0 and less than or equal to the number of pages."); };
 	component.instance().setPage(2);
 	expect(component.html()).toMatchSnapshot();
 	component.instance().setPage(0);
-	expect(fn).toThrow("The index must be an integer greater than 0 and less than or equal to the number of pages.");
 	component.instance().setPage(3);
 	expect(component.html()).toMatchSnapshot();
 	component.instance().setPage(11);
-	expect(fn).toThrow("The index must be an integer greater than 0 and less than or equal to the number of pages.");
 });
 
 test("Items per page amount", () => {
