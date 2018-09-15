@@ -50,9 +50,7 @@ test("Render with custom class", () => {
 test("Pages changing", () => {
 	const component = shallow(defaultComponent);
 	component.instance().nextPage();
-	expect(component.html()).toMatchSnapshot();
 	component.instance().nextPage();
-	expect(component.html()).toMatchSnapshot();
 	component.instance().prevPage();
 	expect(component.html()).toMatchSnapshot();
 });
@@ -60,7 +58,6 @@ test("Pages changing", () => {
 test("Setting page", () => {
 	const component = shallow(defaultComponent);
 	component.instance().setPage(2);
-	expect(component.html()).toMatchSnapshot();
 	component.instance().setPage(0);
 	component.instance().setPage(3);
 	expect(component.html()).toMatchSnapshot();
