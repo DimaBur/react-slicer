@@ -3,10 +3,6 @@
   "version": "0.4.0",
   "description": "React component for slicing array with pagination",
   "main": "build/index.js",
-  "files": [
-    "build/",
-    "docs/"
-  ],
   "scripts": {
     "start": "webpack --watch --mode development --env.development",
     "build": "webpack --mode production --env.production",
