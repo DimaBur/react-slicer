@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../scss/style.scss";
 import Pagination from "./Pagination";
+import {Redirect} from "react-router-dom";
 
-class Viewer extends React.Component {
+class List extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -16,7 +17,7 @@ class Viewer extends React.Component {
 
 	componentDidMount() {
 		this.setState({
-			currentPage: this.props.initialPage
+			currentPage: parseInt(this.props.match.params.pageNum)
 		});
 	}
 
@@ -24,7 +25,7 @@ class Viewer extends React.Component {
 		if (Number.isInteger(index) && index > 0 && index <= this.numberOfPages) {
 			this.setState({
 				currentPage: Number(index)
-			});
+			}, () => this.props.history.push(`/${Number(index)}`));
 		}
 	}
 
@@ -41,23 +42,21 @@ class Viewer extends React.Component {
 	prevPage() {
 		const {currentPage} = this.state;
 		if (currentPage > 1) {
-			this.setState({
-				currentPage: currentPage - 1
-			});
+			const page = currentPage - 1;
+			this.setPage(page);
 		}
 	}
 
 	nextPage() {
 		const {currentPage} = this.state;
 		if (currentPage < this.numberOfPages) {
-			this.setState({
-				currentPage: currentPage + 1
-			});
+			const page = currentPage + 1;
+			this.setPage(page);
 		}
 	}
 
 	render() {
-		console.log("this.props", this.props);
+
 		const {prevBtn, nextBtn, customClass} = this.props,
 			{currentPage} = this.state;
 
@@ -84,7 +83,7 @@ class Viewer extends React.Component {
 	}
 }
 
-Viewer.defaultProps = {
+List.defaultProps = {
 	initialPage: 1,
 	itemsPerPage: 4,
 	customClass: "react-slicer",
@@ -96,7 +95,7 @@ Viewer.defaultProps = {
 	</span>
 };
 
-Viewer.propTypes = {
+List.propTypes = {
 	children: PropTypes.array,
 	customClass: PropTypes.string,
 	initialPage: PropTypes.number,
@@ -105,4 +104,4 @@ Viewer.propTypes = {
 	prevBtn: PropTypes.object,
 };
 
-export default Viewer;
+export default List;

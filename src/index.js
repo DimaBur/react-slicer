@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Viewer from "./components/Viewer";
+import Viewer from "./components/List";
 
 class Slicer extends Component {
 	constructor(props) {
@@ -20,10 +20,9 @@ class Slicer extends Component {
 	}
 
 	render() {
-		console.log(this.props);
 		return (
 			<BrowserRouter >
-				<Route path="/" render={(routeProps) => <Viewer {...routeProps} {...this.props} ref={component => (this.viewer = component)}/>}/>
+				<Route path="/:pageNum" render={(routeProps) => <Viewer {...routeProps} {...this.props} ref={component => (this.viewer = component)}/>}/>
 			</BrowserRouter>
 		);
 	}
