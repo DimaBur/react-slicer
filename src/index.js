@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Viewer from "./components/Viewer";
 
 class Slicer extends Component {
@@ -20,10 +20,11 @@ class Slicer extends Component {
 	}
 
 	render() {
+		console.log(this.props);
 		return (
-			<Router {...this.props}>
-				<Viewer {...this.props} onRef={component => (this.viewer = component)}/>
-			</Router>
+			<BrowserRouter >
+				<Route path="/" render={(routeProps) => <Viewer {...routeProps} {...this.props} ref={component => (this.viewer = component)}/>}/>
+			</BrowserRouter>
 		);
 	}
 };

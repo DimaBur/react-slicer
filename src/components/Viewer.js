@@ -7,7 +7,7 @@ class Viewer extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentPage: this.props.initialPage
+			currentPage: 1
 		};
 		this.prevPage = this.prevPage.bind(this);
 		this.nextPage = this.nextPage.bind(this);
@@ -15,7 +15,9 @@ class Viewer extends React.Component {
 	}
 
 	componentDidMount() {
-		this.props.onRef(this);
+		this.setState({
+			currentPage: this.props.initialPage
+		});
 	}
 
 	setPage(index) {
@@ -55,6 +57,7 @@ class Viewer extends React.Component {
 	}
 
 	render() {
+		console.log("this.props", this.props);
 		const {prevBtn, nextBtn, customClass} = this.props,
 			{currentPage} = this.state;
 
