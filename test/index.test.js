@@ -3,7 +3,7 @@ import renderer from "react-test-renderer";
 import enzyme, {shallow} from "enzyme";
 import toJson from 'enzyme-to-json';
 
-import Slicer from "../src/index";
+import Slicer from "../src/components/index";
 
 import Adapter from "enzyme-adapter-react-16";
 
