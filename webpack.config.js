@@ -35,7 +35,7 @@ module.exports = env => ({
 			filename: "react-slicer.css"
 		})
 	],
-	// externals: {
-	// 	"react": "commonjs react"
-	// }
+	externals: {
+		"react": "commonjs react"
+	}
 });

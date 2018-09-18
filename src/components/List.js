@@ -22,10 +22,11 @@ class List extends React.Component {
 	}
 
 	setPage(index) {
+		const {pageName} = this.props;
 		if (Number.isInteger(index) && index > 0 && index <= this.numberOfPages) {
 			this.setState({
 				currentPage: Number(index)
-			}, () => this.props.history.push(`/${Number(index)}`));
+			}, () => this.props.history.push(`/${pageName}${Number(index)}`));
 		}
 	}
 
