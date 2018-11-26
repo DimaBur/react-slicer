@@ -51,7 +51,7 @@ class Slicer extends React.Component {
 	}
 
 	render() {
-		const {prevBtn, nextBtn, customClass} = this.props,
+		const {pagination, prevBtn, nextBtn, customClass} = this.props,
 			{currentPage} = this.state;
 
 		return (
@@ -62,7 +62,7 @@ class Slicer extends React.Component {
 				</div>
 
 
-				<Pagination
+				{pagination ? <Pagination
 					numberOfPages={this.numberOfPages}
 					currentPage={currentPage}
 					setPage={this.setPage}
@@ -71,7 +71,7 @@ class Slicer extends React.Component {
 					prevBtn={prevBtn}
 					nextBtn={nextBtn}
 					customClass={customClass}
-				/>
+				/> : null}
 			</div>
 		);
 	}
@@ -81,6 +81,7 @@ Slicer.defaultProps = {
 	initialPage: 1,
 	itemsPerPage: 4,
 	customClass: "react-slicer",
+	pagination: true,
 	prevBtn: <span className="react-slicer__arrow react-slicer__arrow_prev">
 		{"<"}
 	</span>,
@@ -95,6 +96,7 @@ Slicer.propTypes = {
 	initialPage: PropTypes.number,
 	itemsPerPage: PropTypes.number,
 	nextBtn: PropTypes.object,
+	pagination: PropTypes.bool,
 	prevBtn: PropTypes.object,
 };
 
